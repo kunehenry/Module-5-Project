@@ -179,6 +179,7 @@ public class Driver {
         System.out.println("Enter the animal's acquisition country:");
         String acquisitionCountry = scanner.nextLine();
         boolean reserved = false;
+        String reservedAnimalName = "";
 
         if (animalType.equalsIgnoreCase("dog")) {
             for (Dog dog : dogList) {
@@ -186,7 +187,7 @@ public class Driver {
                         && dog.getTrainingStatus().equalsIgnoreCase("Phase III") && !dog.getReserved()) {
                     dog.setReserved(true);
                     reserved = true;
-                    System.out.println("\n\n" + dog.getName() + " is now reserved.\n\n");
+                    reservedAnimalName = dog.getName();
                     break;
                 }
             }
@@ -196,7 +197,7 @@ public class Driver {
                         && monkey.getTrainingStatus().equalsIgnoreCase("Phase III") && !monkey.getReserved()) {
                     monkey.setReserved(true);
                     reserved = true;
-                    System.out.println("\n\n" + monkey.getName() + " is now reserved.\n\n");
+                    reservedAnimalName = monkey.getName();
                     break;
                 }
             }
@@ -205,7 +206,14 @@ public class Driver {
             return;
         }
 
-        if (!reserved) {
+        printReservationResult(animalType, acquisitionCountry, reserved, reservedAnimalName);
+    }
+
+    public static void printReservationResult(String animalType, String acquisitionCountry, boolean reserved,
+            String reservedAnimalName) {
+        if (reserved) {
+            System.out.println("\n\n" + reservedAnimalName + " is now reserved.\n\n");
+        } else {
             System.out.println("\n\nNo available " + animalType + " found in " + acquisitionCountry + ".\n\n");
         }
     }
