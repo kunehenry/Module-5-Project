@@ -1,4 +1,5 @@
 Grazioso Salvare - Animal Reservation System
+
 This Animal Reservation System is a Java console application that helps manage and reserve animals for users. It supports two types of animals: dogs and monkeys. The application allows users to input new animals, reserve available animals, and view animal lists.
 Features
 * Add new dogs and monkeys to the system
