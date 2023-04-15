@@ -1,6 +1,9 @@
 /**
  * Monkey class is a subclass of RescueAnimal that represents a monkey with
  * specific attributes such as species, tail length, height, and body length.
+ * 
+ * @author Dat Nguyen
+ * @version 2.0
  */
 public class Monkey extends RescueAnimal {
 
@@ -10,7 +13,25 @@ public class Monkey extends RescueAnimal {
     private double height;
     private double bodyLength;
 
-    // Constructor
+
+    
+    /**
+     * Constructor for the Monkey class.
+     *
+     * @param name               The name of the monkey.
+     * @param species            The species of the monkey.
+     * @param gender             The gender of the monkey.
+     * @param age                The age of the monkey.
+     * @param weight             The weight of the monkey.
+     * @param acquisitionDate    The acquisition date of the monkey.
+     * @param acquisitionCountry The acquisition country of the monkey.
+     * @param trainingStatus     The training status of the monkey.
+     * @param reserved           Whether the monkey is reserved.
+     * @param inServiceCountry   The in-service country of the monkey.
+     * @param tailLength         The tail length of the monkey.
+     * @param height             The height of the monkey.
+     * @param bodyLength         The body length of the monkey.
+     */
     public Monkey(String name, String species, String gender, int age,
             double weight, String acquisitionDate, String acquisitionCountry,
             String trainingStatus, boolean reserved, String inServiceCountry,
@@ -33,46 +54,82 @@ public class Monkey extends RescueAnimal {
         setBodyLength(bodyLength);
     }
 
+
+
     // Accessor Methods
 
-    // Getter method for species
+    /**
+     * Gets the species of the monkey.
+     *
+     * @return The species of the monkey.
+     */
     public String getSpecies() {
         return species;
     }
 
-    // Getter method for tail length
+    /**
+     * Gets the tail length of the monkey.
+     *
+     * @return The tail length of the monkey.
+     */
     public double getTailLength() {
         return tailLength;
     }
 
-    // Getter method for height
+    /**
+     * Gets the height of the monkey.
+     *
+     * @return The height of the monkey.
+     */
     public double getHeight() {
         return height;
     }
 
-    // Getter method for body length
+    /**
+     * Gets the body length of the monkey.
+     *
+     * @return The body length of the monkey.
+     */
     public double getBodyLength() {
         return bodyLength;
     }
 
+    
+
     // Mutator Methods
 
-    // Setter method for species
+    /**
+     * Sets the species of the monkey.
+     *
+     * @param monkeySpecies The species of the monkey.
+     */
     public void setSpecies(String monkeySpecies) {
         species = monkeySpecies;
     }
 
-    // Setter method for tail length
+    /**
+     * Sets the tail length of the monkey.
+     *
+     * @param monkeyTailLength The tail length of the monkey.
+     */
     public void setTailLength(double monkeyTailLength) {
         tailLength = monkeyTailLength;
     }
 
-    // Setter method for height
+    /**
+     * Sets the height of the monkey.
+     *
+     * @param monkeyHeight The height of the monkey.
+     */
     public void setHeight(double monkeyHeight) {
         height = monkeyHeight;
     }
 
-    // Setter method for body length
+    /**
+     * Sets the body length of the monkey.
+     *
+     * @param monkeyBodyLength The body length of the monkey.
+     */
     public void setBodyLength(double monkeyBodyLength) {
         bodyLength = monkeyBodyLength;
     }
