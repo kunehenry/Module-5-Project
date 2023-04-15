@@ -4,8 +4,8 @@ public class Dog extends RescueAnimal {
     private String breed;
 
     // Constructor
-    public Dog(String name, String breed, String gender, String age,
-            String weight, String acquisitionDate, String acquisitionCountry,
+    public Dog(String name, String breed, String gender, int age,
+            double weight, String acquisitionDate, String acquisitionCountry,
             String trainingStatus, boolean reserved, String inServiceCountry) {
         setName(name);
         setBreed(breed);
@@ -17,7 +17,6 @@ public class Dog extends RescueAnimal {
         setTrainingStatus(trainingStatus);
         setReserved(reserved);
         setInServiceCountry(inServiceCountry);
-
     }
 
     // Accessor Method

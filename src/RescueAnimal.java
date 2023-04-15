@@ -6,8 +6,8 @@ public class RescueAnimal {
 	private String name;
 	private String animalType;
 	private String gender;
-	private String age;
-	private String weight;
+	private int age;
+	private double weight;
 	private String acquisitionDate;
 	private String acquisitionCountry;
 	private String trainingStatus;
@@ -42,19 +42,19 @@ public class RescueAnimal {
 		this.gender = gender;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
-	public String getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(String weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 

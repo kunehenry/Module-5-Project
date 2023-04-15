@@ -6,15 +6,15 @@ public class Monkey extends RescueAnimal {
 
     // Instance variables
     private String species;
-    private String tailLength;
-    private String height;
-    private String bodyLength;
+    private double tailLength;
+    private double height;
+    private double bodyLength;
 
     // Constructor
-    public Monkey(String name, String species, String gender, String age,
-            String weight, String acquisitionDate, String acquisitionCountry,
+    public Monkey(String name, String species, String gender, int age,
+            double weight, String acquisitionDate, String acquisitionCountry,
             String trainingStatus, boolean reserved, String inServiceCountry,
-            String tailLength, String height, String bodyLength) {
+            double tailLength, double height, double bodyLength) {
         // Set the inherited attributes using setter methods
         setName(name);
         setSpecies(species);
@@ -41,17 +41,17 @@ public class Monkey extends RescueAnimal {
     }
 
     // Getter method for tail length
-    public String getTailLength() {
+    public double getTailLength() {
         return tailLength;
     }
 
     // Getter method for height
-    public String getHeight() {
+    public double getHeight() {
         return height;
     }
 
     // Getter method for body length
-    public String getBodyLength() {
+    public double getBodyLength() {
         return bodyLength;
     }
 
@@ -63,17 +63,17 @@ public class Monkey extends RescueAnimal {
     }
 
     // Setter method for tail length
-    public void setTailLength(String monkeyTailLength) {
+    public void setTailLength(double monkeyTailLength) {
         tailLength = monkeyTailLength;
     }
 
     // Setter method for height
-    public void setHeight(String monkeyHeight) {
+    public void setHeight(double monkeyHeight) {
         height = monkeyHeight;
     }
 
     // Setter method for body length
-    public void setBodyLength(String monkeyBodyLength) {
+    public void setBodyLength(double monkeyBodyLength) {
         bodyLength = monkeyBodyLength;
     }
 }
