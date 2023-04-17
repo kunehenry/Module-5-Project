@@ -111,7 +111,7 @@ public class Driver {
         System.out.println("[3] Reserve an animal");
         System.out.println("[4] Print a list of all dogs");
         System.out.println("[5] Print a list of all monkeys");
-        System.out.println("[6] Print a list of all animals that are not reserved");
+        System.out.println("[6] Print a list of all In-Service animals that are not reserved");
         System.out.println("[q] Quit application");
 
         // Print an empty line for better readability.
@@ -154,7 +154,7 @@ public class Driver {
         Monkey monkey1 = new Monkey("George", "Capuchin", "male", 2, 9.4, "01-15-2018", "Brazil", "Phase III",
                 false, "United States", 12.5, 22.5, 18.0);
         Monkey monkey2 = new Monkey("Coco", "Marmoset", "female", 5, 8.1, "07-23-2019", "Colombia", "in-service",
-                false, "United States", 10.0, 20.0, 16.0);
+                false, "Colombia", 10.0, 20.0, 16.0);
         Monkey monkey3 = new Monkey("Bubbles", "Squirrel Monkey", "male", 3, 10.3, "03-30-2020", "Peru", "Phase II",
                 true, "United States", 14.0, 24.0, 20.0);
         Monkey monkey4 = new Monkey("Momo", "Tamarin", "female", 4, 8.5, "06-18-2018", "United States", "Phase II",
@@ -417,51 +417,73 @@ public class Driver {
     public static void printAnimals(String listType) {
         // If the listType is "dog", print a list of all dogs
         if (listType.equalsIgnoreCase("dog")) {
-            System.out.println("\nList of all dogs:");
+            System.out
+                    .println("\n\n                                                               LIST OF ALL DOGS:\n");
             for (Dog dog : dogList) {
                 System.out.println(
-                        "Name: " + dog.getName() + ", Status: " + dog.getTrainingStatus() + ", Acquisition Country: "
-                                + dog.getAcquisitionLocation() + ", In-Service Country: " + dog.getInServiceLocation()
-                                + ", Reserved: " + dog.getReserved());
+                        "    Name: " + dog.getName() + " | Breed: " + dog.getBreed() + " | Age: " + dog.getAge()
+                                + " | Gender: " + dog.getGender() + " | Weight: " + dog.getWeight());
+                System.out.println("        Status: " + dog.getTrainingStatus() + " | Reserved: " + dog.getReserved()
+                        + " | In-Service Country: " + dog.getInServiceLocation() + " | Acquisition Country: "
+                        + dog.getAcquisitionLocation() + " | Acquisition Date: " + dog.getAcquisitionDate() + "\n");
             }
         }
         // If the listType is "monkey", print a list of all monkeys
         else if (listType.equalsIgnoreCase("monkey")) {
-            System.out.println("\nList of all monkeys:");
+            System.out.println(
+                    "\n\n                                                               LIST OF ALL MONKEYS:\n");
             for (Monkey monkey : monkeyList) {
-                System.out.println("Name: " + monkey.getName() + ", Status: " + monkey.getTrainingStatus()
-                        + ", Acquisition Country: " + monkey.getAcquisitionLocation() + ", In-Service Country: "
-                        + monkey.getInServiceLocation() + ", Reserved: " + monkey.getReserved());
+                System.out.println("    Name: " + monkey.getName() + " | Species: " + monkey.getSpecies() + " | Age: "
+                        + monkey.getAge() + " | Gender: " + monkey.getGender() + " | Weight: " + monkey.getWeight()
+                        + " | Tail Length: " + monkey.getTailLength() + " | Height: " + monkey.getHeight()
+                        + " | Body Length: " + monkey.getBodyLength());
+                System.out.println("        Status: " + monkey.getTrainingStatus() + " | Reserved: "
+                        + monkey.getReserved()
+                        + " | In-Service Country: " + monkey.getInServiceLocation() + " | Acquisition Country: "
+                        + monkey.getAcquisitionLocation() + " | Acquisition Date: " + monkey.getAcquisitionDate()
+                        + "\n");
             }
 
         }
         // If the listType is "available", print a list of all animals that are not
         // reserved and are in-service
         else if (listType.equalsIgnoreCase("available")) {
-            System.out.println("\nList of all animals that are not reserved (available):");
+            System.out.println(
+                    "\n\n                                                  LIST OF ALL IN-SERVICE ANIMALS THAT ARE AVAILABLE:\n");
             boolean availableAnimalFound = false;
             for (Dog dog : dogList) {
                 // Print only in-service dogs that are not reserved
                 if (!dog.getReserved() && dog.getTrainingStatus().equalsIgnoreCase("in-service")) {
-                    System.out
-                            .println("Dog: " + dog.getName() + ", Acquisition Country: " + dog.getAcquisitionLocation()
-                                    + ", In-Service Country: " + dog.getInServiceLocation());
+                    System.out.println(
+                            "    Name: " + dog.getName() + " | Breed: " + dog.getBreed() + " | Age: " + dog.getAge()
+                                    + " | Gender: " + dog.getGender() + " | Weight: " + dog.getWeight());
+                    System.out.println("        Status: " + dog.getTrainingStatus() + " | Reserved: "
+                            + dog.getReserved()
+                            + " | In-Service Country: " + dog.getInServiceLocation() + " | Acquisition Country: "
+                            + dog.getAcquisitionLocation() + " | Acquisition Date: " + dog.getAcquisitionDate() + "\n");
                     availableAnimalFound = true;
                 }
             }
             for (Monkey monkey : monkeyList) {
                 // Print only in-service monkeys that are not reserved
                 if (!monkey.getReserved() && monkey.getTrainingStatus().equalsIgnoreCase("in-service")) {
-                    System.out.println("Monkey: " + monkey.getName() + ", Acquisition Country: "
-                            + monkey.getAcquisitionLocation() + ", In-Service Country: "
-                            + monkey.getInServiceLocation());
+                    System.out.println("    Name: " + monkey.getName() + " | Species: " + monkey.getSpecies()
+                            + " | Age: "
+                            + monkey.getAge() + ", Gender: " + monkey.getGender() + ", Weight: " + monkey.getWeight()
+                            + " | Tail Length: " + monkey.getTailLength() + " | Height: " + monkey.getHeight()
+                            + " | Body Length: " + monkey.getBodyLength());
+                    System.out.println("        Status: " + monkey.getTrainingStatus() + " | Reserved: "
+                            + monkey.getReserved()
+                            + " | In-Service Country: " + monkey.getInServiceLocation() + " | Acquisition Country: "
+                            + monkey.getAcquisitionLocation() + " | Acquisition Date: " + monkey.getAcquisitionDate()
+                            + "\n");
                     availableAnimalFound = true;
                 }
             }
 
             // If no available animals are found, print a message
             if (!availableAnimalFound) {
-                System.out.println("There are no available animals at this time.");
+                System.out.println("There is no available animal at this time.");
             }
         }
         // If an invalid list type is entered, print an error message and return to the
@@ -548,7 +570,7 @@ public class Driver {
      * @return The animal's gender if it is valid, or null if it is not.
      */
     private static String promptForGender(Scanner scanner) {
-        System.out.println("Enter the gender (Male/Female):");
+        System.out.println("Enter the gender (male/female):");
         String gender = scanner.nextLine();
 
         // Validate the input for gender
@@ -630,10 +652,11 @@ public class Driver {
      * @return The training status if it is valid, or null if it is not.
      */
     private static String promptForTrainingStatus(Scanner scanner) {
-        String[] validStatuses = { "Phase I", "Phase II", "Phase III", "Phase IV", "Phase V", "in-service", "intake",
-                "farm" };
+        String[] validStatuses = { "Phase I", "Phase II", "Phase III", "Phase IV", "Phase V", "In-service", "Intake",
+                "Farm" };
 
-        System.out.println("Enter the training status:");
+        System.out.println(
+                "Enter the training status (Intake | Phase I | Phase II | Phase III | Phase IV | Phase V | In-service | Farm):");
         String trainingStatus = scanner.nextLine();
 
         // Check if the input matches any of the valid training statuses
@@ -667,20 +690,20 @@ public class Driver {
      * @return The species if it is valid, or null if it is not.
      */
     private static String promptForSpecies(Scanner scanner) {
+        String[] validSpecies = { "Capuchin", "Guenon", "Macaque", "Marmoset", "Squirrel monkey", "Tamarin" };
         // Display the prompt for the user to enter the monkey's species
         System.out.println(
-                "Enter the monkey's species (Capuchin, Guenon, Macaque, Marmoset, Squirrel monkey, or Tamarin):");
-        String species = scanner.nextLine();
+                "Enter the monkey's species (Capuchin | Guenon | Macaque | Marmoset | Squirrel monkey | Tamarin):");
+        String inputSpecies = scanner.nextLine();
 
         // Check if the input matches any of the valid monkey species
-        if (!species.equalsIgnoreCase("Capuchin") && !species.equalsIgnoreCase("Guenon") &&
-                !species.equalsIgnoreCase("Macaque") && !species.equalsIgnoreCase("Marmoset") &&
-                !species.equalsIgnoreCase("Squirrel monkey") && !species.equalsIgnoreCase("Tamarin")) {
-            System.out.println(
-                    "\n\nInvalid species. Only Capuchin, Guenon, Macaque, Marmoset, Squirrel monkey, and Tamarin monkeys are allowed.\n\n");
-            return null;
+        for (String species : validSpecies) {
+            if (species.equalsIgnoreCase(inputSpecies)) {
+                return inputSpecies;
+            }
         }
 
-        return species;
+        System.out.println("\n\nInvalid species. Please enter a valid species.\n\n");
+        return null;
     }
 }

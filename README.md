@@ -23,4 +23,4 @@ Notes
 * When adding a new dog, the system will ask for the dog's name, breed, gender, age, weight, acquisition date, acquisition country, training status, reservation status, in-service country, and other relevant attributes.
 * When adding a new monkey, the system will ask for the monkey's name, species, gender, age, weight, acquisition date, acquisition country, training status, reservation status, in-service country, and other relevant attributes.
 * The application only supports the following monkey species: Capuchin, Guenon, Macaque, Marmoset, Squirrel monkey, and Tamarin.
-* Animals can be reserved based on their in-service country. The system will find the first available animal (dog or monkey) that matches the specified in-service country, is in service, and is not already reserved.
+* Animals can be reserved based on their in-service country. The system will find the first available animal (dog or monkey) that matches the specified in-service country, has "in-service" status, and is not already reserved.
